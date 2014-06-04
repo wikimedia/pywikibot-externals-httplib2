@@ -5,14 +5,13 @@ except ImportError:
 import sys
 
 pkgdir = {'': 'python%s' % sys.version_info[0]}
-VERSION = '0.8-pywikibot1'
+VERSION = '0.9-pywikibot1'
 
 setup(name='httplib2',
         version=VERSION,
         author='Joe Gregorio',
         author_email='joe@bitworking.org',
-        url='http://code.google.com/p/httplib2/',
-        download_url='http://httplib2.googlecode.com/files/httplib2-%s.tar.gz' % VERSION,
+        url='https://github.com/jcgregorio/httplib2',
         description='A comprehensive HTTP client library.',
         license='MIT',
         long_description="""

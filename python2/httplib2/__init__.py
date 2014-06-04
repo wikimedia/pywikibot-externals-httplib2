@@ -22,7 +22,7 @@ __contributors__ = ["Thomas Broyer (t.broyer@ltgt.net)",
                     "Sam Ruby",
                     "Louis Nyffenegger"]
 __license__ = "MIT"
-__version__ = "0.8"
+__version__ = "0.9"
 
 import re
 import sys
@@ -1082,7 +1082,9 @@ try:
     def _new_fixed_fetch(validate_certificate):
         def fixed_fetch(url, payload=None, method="GET", headers={},
                         allow_truncated=False, follow_redirects=True,
-                        deadline=5):
+                        deadline=None):
+            if deadline is None:
+                deadline = socket.getdefaulttimeout() or 5
             return fetch(url, payload=payload, method=method, headers=headers,
                          allow_truncated=allow_truncated,
                          follow_redirects=follow_redirects, deadline=deadline,
