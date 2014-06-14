@@ -1,7 +1,7 @@
-import inspect
+import os
 import sys
-if sys.version_info[0] == 2:
-    from .python2 import httplib2
-else:
-    from .python3 import httplib2
-globals().update(inspect.getmembers(httplib2))
+
+path = os.path.dirname(__file__)+os.path.sep+'python'+str(sys.version_info[0])
+sys.path.insert(0, path)
+del sys.modules['httplib2']
+import httplib2
