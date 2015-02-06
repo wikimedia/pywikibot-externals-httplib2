@@ -5,7 +5,7 @@ except ImportError:
 import sys
 
 pkgdir = {'': 'python%s' % sys.version_info[0]}
-VERSION = '0.9-pywikibot1'
+VERSION = '0.9+pywikibot2'
 
 setup(name='httplib2',
         version=VERSION,
